@@ -6,7 +6,7 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 edges = []
-for _ in range(m):
+for i in range(m):
     u, v, w = map(int, input().split())
     edges.append((u, v, w))
 
@@ -14,7 +14,7 @@ INF = 10**30
 dist = [-INF] * (n + 1)
 dist[1] = 0
 
-for _ in range(n - 1):
+for adat in range(n - 1):
     updated = False
     for u, v, w in edges:
         if dist[u] > -INF and dist[u] + w > dist[v]:
@@ -28,7 +28,7 @@ for u, v, w in edges:
     if dist[u] > -INF and dist[u] + w > dist[v]:
         good[v] = True
 
-adj = [[] for _ in range(n + 1)]
+adj = [[] for i in range(n + 1)]
 for u, v, w in edges:
     adj[u].append(v)
 
